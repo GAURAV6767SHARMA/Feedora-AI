@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-12T11:04:00.000Z",
+  "title": "Design System: LocalPulse AI",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Indigo",
+        "canonical": "oklch(60% 0.14 262)",
+        "tonalRamp": [
+          "#1E293B",
+          "#373365",
+          "#4F46E5",
+          "#6366F1",
+          "#7C3AED",
+          "#A855F7",
+          "#C084FC",
+          "#E0E7FF"
+        ]
+      },
+      "secondary": {
+        "role": "secondary",
+        "displayName": "Cyan",
+        "canonical": "oklch(75% 0.15 204)",
+        "tonalRamp": [
+          "#0F1729",
+          "#1E3A5F",
+          "#0891B2",
+          "#06B6D4",
+          "#0D9488",
+          "#2DD4BF",
+          "#5EEAD4",
+          "#E0F7FA"
+        ]
+      },
+      "neutral-bg": {
+        "role": "neutral",
+        "displayName": "Canvas Navy",
+        "canonical": "oklch(10% 0.01 240)",
+        "tonalRamp": [
+          "#090D16",
+          "#0A0E17",
+          "#0C111B",
+          "#090D16",
+          "#111827",
+          "#162032",
+          "#1F293D",
+          "#F8FAFC"
+        ]
+      },
+      "status-positive": {
+        "role": "neutral",
+        "displayName": "Emerald",
+        "canonical": "oklch(60% 0.18 148)",
+        "tonalRamp": [
+          "#064E3B",
+          "#047857",
+          "#059669",
+          "#10B981",
+          "#34D399",
+          "#6EE7B7",
+          "#A7F3D0",
+          "#ECFDF5"
+        ]
+      },
+      "status-negative": {
+        "role": "neutral",
+        "displayName": "Rose",
+        "canonical": "oklch(60% 0.18 20)",
+        "tonalRamp": [
+          "#7F1D1D",
+          "#B91C1C",
+          "#DC2626",
+          "#F43F5E",
+          "#FB7185",
+          "#FDA4AF",
+          "#FDBDBD",
+          "#FCE7F7"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headlines and main page titles." },
+      "body": { "displayName": "Body", "purpose": "Main content, descriptions, data." },
+      "label": { "displayName": "Label", "purpose": "Button text, badge labels, small UI elements." }
+    },
+    "shadows": [
+      { "name": "subtle", "value": "0 1px 2px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.05)", "purpose": "Input fields and subtle interactive elements." },
+      { "name": "card", "value": "0 4px 14px -2px rgba(0, 0, 0, 0.6), inset 0 1px 0 0 rgba(255, 255, 255, 0.06)", "purpose": "Default card elevation." },
+      { "name": "elevated", "value": "0 16px 32px -4px rgba(0, 0, 0, 0.7), inset 0 1px 0 0 rgba(255, 255, 255, 0.08)", "purpose": "Modals and high-priority overlays." },
+      { "name": "glow-indigo", "value": "0 0 24px -4px rgba(99, 102, 241, 0.25)", "purpose": "Active state for primary buttons and indigo highlights." },
+      { "name": "glow-cyan", "value": "0 0 24px -4px rgba(6, 182, 212, 0.25)", "purpose": "Demand Radar themed elements." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Default easing for state transitions." },
+      { "name": "ease-in", "value": "cubic-bezier(0.4, 0, 1, 1)", "purpose": "Fade-in animations." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The main call-to-action button for primary interactions. Indigo background with white text.",
+      "html": "<button class=\"ds-btn-primary\"><span>Explore Demo Workspace</span></button>",
+      "css": ".ds-btn-primary { background: #6366F1; color: #F8FAFC; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; font-size: 0.875rem; border: none; cursor: pointer; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; box-shadow: 0 1px 2px 0 rgba(0,0,0,0.5), inset 0 1px 0 0 rgba(255,255,255,0.06); } .ds-btn-primary:hover { background: #4F46E5; transform: translateY(-1px); box-shadow: 0 4px 14px -2px rgba(0,0,0,0.6), inset 0 1px 0 0 rgba(255,255,255,0.06), 0 0 24px -4px rgba(99,102,241,0.25); } .ds-btn-primary:active { background: #312E81; transform: scale(0.95); } .ds-btn-primary[disabled] { background: #475569; cursor: not-allowed; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Ghost/secondary button variant for secondary actions. Surface card background with border.",
+      "html": "<button class=\"ds-btn-secondary\"><span>Inspect Ingested Reviews</span></button>",
+      "css": ".ds-btn-secondary { background: #111827; color: #F8FAFC; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; font-size: 0.875rem; border: 1px solid #1F293D; cursor: pointer; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; } .ds-btn-secondary:hover { background: #162032; border-color: #2E3A52; }"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Primary container component for dashboard content and data display.",
+      "html": "<div class=\"ds-card\"><h3>Title</h3><p>Content</p></div>",
+      "css": ".ds-card { background: #111827; color: #F8FAFC; border-radius: 10px; border: 1px solid #1F293D; box-shadow: 0 4px 14px -2px rgba(0,0,0,0.6), inset 0 1px 0 0 rgba(255,255,255,0.06); padding: 1.5rem; } .ds-card:hover { border-color: rgba(6, 182, 212, 0.3); box-shadow: 0 4px 20px -4px rgba(99,102,241,0.25); }"
+    },
+    {
+      "name": "Badge",
+      "kind": "chip",
+      "refersTo": "badge",
+      "description": "Small status indicator for tags, priority levels, and category badges.",
+      "html": "<span class=\"ds-badge ds-badge-primary\"><span>AI</span></span>",
+      "css": ".ds-badge { display: inline-flex; align-items: center; gap: 0.25rem; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; } .ds-badge-primary { background: rgba(99, 102, 241, 0.15); color: #C084FC; border: 1px solid rgba(99, 102, 241, 0.3); } .ds-badge-positive { background: rgba(16, 185, 129, 0.1); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.2); } .ds-badge-negative { background: rgba(244, 63, 94, 0.1); color: #FB7185; border: 1px solid rgba(244, 63, 94, 0.2); }"
+    },
+    {
+      "name": "Sidebar Navigation",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Persistent left sidebar navigation with collapsible mobile support.",
+      "html": "<nav class=\"ds-sidebar-nav\"><ul><li><a href=\"/dashboard\" class=\"ds-nav-link active\">Dashboard</a></li></ul></nav>",
+      "css": ".ds-sidebar-nav { width: 256px; background: #0A0E17; border-right: 1px solid #1F293D; padding: 1rem; } .ds-nav-link { display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 1rem; border-radius: 0.75rem; color: #94A3B8; font-size: 0.875rem; font-weight: 500; transition: all 0.2s; } .ds-nav-link:hover { background: rgba(255,255,255,0.05); color: #F8FAFC; } .ds-nav-link.active { background: rgba(99, 102, 241, 0.15); color: #C084FC; border-left: 3px solid #6366F1; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Intelligence Dashboard",
+    "overview": "LocalPulse AI presents a sophisticated dark-mode interface that transforms complex customer intelligence into actionable business insights. The design emphasizes data density without clutter, using a high-contrast color system where indigo accents draw attention to critical actions while emerald and rose indicate sentiment direction. Every visual element serves the busy local business owner who needs to quickly scan and act on intelligence signals.",
+    "keyCharacteristics": [
+      "Dark premium aesthetic with navy canvas (#090D16)",
+      "Strategic color scarcity - indigo used sparingly for impact",
+      "Clean typography with tabular numbers for analytics precision",
+      "Subtle glow effects for interactive states, not static decoration",
+      "Data-dense yet scannable with consistent 8px baseline grid"
+    ],
+    "rules": [
+      { "name": "The Scarcity Rule", "body": "The primary indigo accent is used on ≤10% of visible interactive elements. Its rarity makes each primary action feel intentional.", "section": "colors" },
+      { "name": "The Layered Depth Rule", "body": "Shadows indicate state (hover, elevation, focus) rather than static hierarchy. Tonal differences create depth between surfaces.", "section": "elevation" },
+      { "name": "The CTA Scarcity Rule", "body": "Only one primary CTA per view. Secondary actions use outline or ghost variants.", "section": "components" },
+      { "name": "The Tabular Numbers Rule", "body": "All analytics and metrics use tabular figures (font-tabular) for consistent alignment.", "section": "typography" }
+    ],
+    "dos": [
+      "Use tabular numbers for all analytics (font-tabular) to maintain alignment.",
+      "Use indigo sparingly for primary CTAs—their impact comes from scarcity.",
+      "Use the glow effects (glow-cyan, glow-indigo) only on interactive hover states, not static elements.",
+      "Maintain 1.5rem-2rem internal padding in cards for scannability.",
+      "Show data with supporting evidence—a demand score always links to verbatim quotes."
+    ],
+    "donts": [
+      "Don't use indigo on passive or decorative elements—reserve for actions.",
+      "Don't add borders to the main canvas—use tonal layering instead.",
+      "Don't use drop shadows on static cards—only for modals and elevated states.",
+      "Don't truncate business names in the sidebar—use truncation classes.",
+      "Don't display demand score without supporting review quotes."
+    ]
+  }
+}

@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #FAF9F6;
+    color: #1C1917;
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  :focus-visible {
+    outline: 2px solid #E05638;
+    outline-offset: 2px;
+  }
+}
+
+/* Accessibility: Respect Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #D6D3D1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A8A29E;
+}
+
+/* Dark Scrollbars */
+html.dark ::-webkit-scrollbar-track {
+  background: #111116;
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: #33333F;
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #4B4B5C;
+}
+
+/* Tabular figures for analytics and metrics */
+.font-tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Recharts Tooltips - Light Mode */
+.recharts-default-tooltip {
+  background-color: #FFFFFF !important;
+  border: 1px solid #EAE8E4 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 10px 25px -4px rgba(0, 0, 0, 0.08) !important;
+  color: #1C1917 !important;
+  padding: 10px 14px !important;
+}
+.recharts-tooltip-label {
+  color: #1C1917 !important;
+  font-weight: 600 !important;
+  font-size: 12px !important;
+  margin-bottom: 4px !important;
+}
+.recharts-tooltip-item {
+  color: #57534E !important;
+  font-size: 12px !important;
+}
+
+/* ==========================================================================
+   AESTHETIC DARK MODE — COHESIVE, ZERO BLACK-ON-BLACK, ZERO FLICKER
+   ========================================================================== */
+
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body {
+  background-color: #0E0E12 !important;
+  color: #F4F2ED !important;
+}
+
+/* 1. Page Canvas & Layout Overrides */
+html.dark .bg-canvas,
+html.dark .bg-\[\#FAF9F6\],
+html.dark [class*="bg-canvas"] {
+  background-color: #0E0E12 !important;
+}
+
+/* 2. Primary Card & Navbar Surfaces (including opacity variants like /95, /90) */
+html.dark [class*="bg-white"],
+html.dark [class*="bg-surface"],
+html.dark header,
+html.dark aside {
+  background-color: #16161D !important;
+}
+
+/* 3. Subtle & Raised Backgrounds */
+html.dark .bg-stone-50,
+html.dark .bg-stone-100,
+html.dark .bg-canvas-subtle,
+html.dark [class*="bg-canvas-subtle"] {
+  background-color: #1E1E28 !important;
+}
+
+html.dark .bg-stone-200 {
+  background-color: #282836 !important;
+}
+
+/* 4. Complete Border Normalization */
+html.dark [class*="border-surface-border"],
+html.dark [class*="border-stone-200"],
+html.dark [class*="border-stone-100"],
+html.dark [class*="border-stone-300"] {
+  border-color: #262633 !important;
+}
+
+/* 5. Typography — High-Legibility Ivory & Warm Grey (matches all opacity variants) */
+html.dark [class*="text-text-primary"],
+html.dark [class*="text-stone-900"],
+html.dark [class*="text-stone-800"],
+html.dark [class*="text-stone-700"] {
+  color: #F4F2ED !important;
+}
+
+html.dark [class*="text-text-secondary"],
+html.dark [class*="text-stone-600"],
+html.dark [class*="text-stone-500"] {
+  color: #A39E96 !important;
+}
+
+html.dark [class*="text-text-muted"],
+html.dark [class*="text-stone-400"] {
+  color: #726E67 !important;
+}
+
+/* 6. Form Controls (Inputs, Selects, Textareas) */
+html.dark input,
+html.dark select,
+html.dark textarea {
+  background-color: #1C1C26 !important;
+  color: #F4F2ED !important;
+  border-color: #2D2D3C !important;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #636059 !important;
+}
+
+html.dark input:focus,
+html.dark select:focus,
+html.dark textarea:focus {
+  border-color: #E05638 !important;
+  background-color: #20202C !important;
+}
+
+/* 7. Hover States in Dark Mode */
+html.dark .hover\:bg-stone-50:hover,
+html.dark .hover\:bg-stone-100:hover,
+html.dark .hover\:bg-canvas-subtle:hover,
+html.dark .group:hover .group-hover\:bg-stone-50 {
+  background-color: #232330 !important;
+}
+
+html.dark .hover\:border-primary\/50:hover {
+  border-color: rgba(224, 86, 56, 0.5) !important;
+}
+
+html.dark .hover\:border-stone-300:hover {
+  border-color: #38384A !important;
+}
+
+/* 8. Semantic Status Badges & Accents in Dark Mode */
+html.dark .bg-primary-light {
+  background-color: rgba(224, 86, 56, 0.16) !important;
+  color: #FF7555 !important;
+}
+
+html.dark .bg-emerald-50,
+html.dark [class*="bg-emerald-50"] {
+  background-color: rgba(21, 128, 61, 0.16) !important;
+  border-color: rgba(21, 128, 61, 0.35) !important;
+}
+
+html.dark .bg-rose-50,
+html.dark [class*="bg-rose-50"] {
+  background-color: rgba(190, 18, 60, 0.16) !important;
+  border-color: rgba(190, 18, 60, 0.35) !important;
+}
+
+html.dark .bg-amber-50,
+html.dark [class*="bg-amber-50"] {
+  background-color: rgba(180, 83, 9, 0.16) !important;
+  border-color: rgba(180, 83, 9, 0.35) !important;
+}
+
+/* 9. Recharts Tooltips - Dark Mode */
+html.dark .recharts-default-tooltip {
+  background-color: #1C1C26 !important;
+  border: 1px solid #2E2E3D !important;
+  color: #F4F2ED !important;
+}
+html.dark .recharts-tooltip-label {
+  color: #F4F2ED !important;
+}
+html.dark .recharts-tooltip-item {
+  color: #A39E96 !important;
+}
+
+/* 10. Depth & Shadows in Dark Mode */
+html.dark .shadow-elevated,
+html.dark .shadow-card {
+  box-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.5), 0 2px 6px -1px rgba(0, 0, 0, 0.4) !important;
+}
+
+@layer utilities {
+  .focus-glow {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-1 focus-visible:ring-offset-white;
+  }
+}
